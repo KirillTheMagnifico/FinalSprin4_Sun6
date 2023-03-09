@@ -6,7 +6,7 @@ import allure
 import pytest
 # Создаем класс главной страницы и описываем локаторы
 class HomePage:
-    first_question = (By.ID, 'accordion__heading-0')
+    first_question = (By.CLASS_NAME, 'accordion__button')
     two_question = (By.ID, 'accordion__heading-1')
     three_question = (By.ID, 'accordion__heading-2')
     fourth_question = (By.ID, 'accordion__heading-3')
@@ -31,27 +31,5 @@ class HomePage:
         self.driver = firefox_driver
         self.page = 'https://qa-scooter.praktikum-services.ru/'
 
-# Описываем методы проверки
-    def check_question_one(self):
-        return self.driver.find_element(*self.first_question)
 
-    def check_question_two(self):
-        return self.driver.find_element(*self.two_question)
 
-    def check_question_three(self):
-        return self.driver.find_element(*self.three_question)
-
-    def check_question_fourth(self):
-        return self.driver.find_element(*self.fourth_question)
-
-    def check_question_five(self):
-        return self.driver.find_element(*self.five_question)
-
-    def check_question_six(self):
-        return self.driver.find_element(*self.six_question)
-
-    def check_question_seven(self):
-        return self.driver.find_element(*self.seven_question)
-
-    def check_question_eight(self):
-        return self.driver.find_element(*self.eight_question)
